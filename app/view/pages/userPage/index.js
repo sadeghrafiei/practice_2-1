@@ -231,24 +231,10 @@ const UserScreen = ({navigation}) => {
                 justifyContent: 'flex-start',
                 alignItems: 'center',
               }}>
-              <View
-                style={{
-                  width: 80,
-                  height: 80,
-                  borderRadius: 40,
-                  margin: 10,
-                  backgroundColor: '#FFF',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderTopColor: '#F56040',
-                  borderLeftColor: '#F77737',
-                  borderBottomColor: '#FCAF45',
-                  borderRightColor: '#FCAF45',
-                  borderWidth: 2,
-                }}>
+              <View style={styles.userImageContainer}>
                 <Image
                   source={USER_PAGE_DATA.userSourceImage}
-                  style={{width: 70, height: 70, borderRadius: 35}}
+                  style={styles.userImage}
                 />
               </View>
 
@@ -259,43 +245,24 @@ const UserScreen = ({navigation}) => {
                   justifyContent: 'space-between',
                 }}>
                 <View style={{marginLeft: 20}}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontWeight: 'bold',
-                      fontSize: 15,
-                    }}>
+                  <Text style={styles.countNumber}>
                     {USER_PAGE_DATA.numberOfPosts}
                   </Text>
-                  <Text style={{textAlign: 'center', fontSize: 12}}>Posts</Text>
+                  <Text style={styles.countName}>Posts</Text>
                 </View>
 
                 <View style={{marginLeft: 20}}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontWeight: 'bold',
-                      fontSize: 15,
-                    }}>
+                  <Text style={styles.countNumber}>
                     {USER_PAGE_DATA.numberOfFollowers}
                   </Text>
-                  <Text style={{textAlign: 'center', fontSize: 12}}>
-                    Followers
-                  </Text>
+                  <Text style={styles.countName}>Followers</Text>
                 </View>
 
                 <View style={{marginLeft: 20}}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      fontWeight: 'bold',
-                      fontSize: 15,
-                    }}>
+                  <Text style={styles.countNumber}>
                     {USER_PAGE_DATA.numberOfFollowing}
                   </Text>
-                  <Text style={{textAlign: 'center', fontSize: 12}}>
-                    Following
-                  </Text>
+                  <Text style={styles.countName}>Following</Text>
                 </View>
               </View>
             </View>
@@ -397,12 +364,7 @@ const UserScreen = ({navigation}) => {
               showsHorizontalScrollIndicator={false}
               inverted
             />
-            <View
-              style={{
-                flexDirection: 'row-reverse',
-                borderTopColor: '#eee',
-                borderTopWidth: 1,
-              }}>
+            <View style={styles.tabBarContainer}>
               <TouchableOpacity
                 style={{
                   width: (windowWidth - 2) / 3,
@@ -485,5 +447,38 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderTopWidth: 1,
     borderColor: '#eee',
+  },
+  userImageContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    margin: 10,
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopColor: '#F56040',
+    borderLeftColor: '#F77737',
+    borderBottomColor: '#FCAF45',
+    borderRightColor: '#FCAF45',
+    borderWidth: 2,
+  },
+  userImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  countName: {
+    textAlign: 'center',
+    fontSize: 12,
+  },
+  countNumber: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  tabBarContainer: {
+    flexDirection: 'row-reverse',
+    borderTopColor: '#eee',
+    borderTopWidth: 1,
   },
 });
